@@ -1,20 +1,16 @@
 # this file contains the social media links and usernames of the author
 # the socials will be displayed in the order they are defined here
-# for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
-cv_pdf: /assets/pdf/kuang_wang_cv.pdf # path to your CV PDF file
-email: kuangwang@link.cuhk.edu.cn            # 你的邮箱
-# inspirehep_id:                             # 暂无 Inspire HEP ID，注释掉
-rss_icon: true                               # 保留 RSS 图标
-scholar_userid: xsMklSkAAAAJ                 # 你的 Google Scholar ID
-# wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
-# whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)                               # 自定义社交链接：GitHub
-custom_social:
-  # github
-  - logo: https://github.githubassets.com/favicons/favicon.svg
-    title: GitHub
-    url: https://github.com/wangkevin02
-  # huggingface
-  - logo: https://huggingface.co/front/assets/huggingface_logo.svg
-    title: Hugging Face
-    url: https://huggingface.co/wangkevin02
+# for more information, please refer to the documentation of jekyll-socials plugin:
+# https://github.com/george-gca/jekyll-socials
 
+cv_pdf: /assets/pdf/kuang_wang_cv.pdf       # CV PDF 路径
+email: kuangwang@link.cuhk.edu.cn           # 邮箱
+github_username: wangkevin02               # GitHub（内置支持）
+scholar_userid: xsMklSkAAAAJ               # Google Scholar（内置支持）
+rss_icon: true                             # RSS 图标
+
+# 自定义：Hugging Face（插件不内置，用 custom_social）
+custom_social:
+  logo: https://huggingface.co/front/assets/huggingface_logo.svg
+  title: Hugging Face
+  url: https://huggingface.co/wangkevin02
