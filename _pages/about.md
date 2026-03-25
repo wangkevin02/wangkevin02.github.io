@@ -22,13 +22,12 @@ social: true
 ---
 
 I am a Ph.D. student in Computer Science at CUHK-Shenzhen,
-advised by [Prof. Haizhou Li](https://colips.org/~eleliha/).
-My research focuses on **Speech Language Models (SLMs)**,
+advised by [Prof. Haizhou Li](https://colips.org/~eleliha/). I received my B.Eng. in Biosystems Engineering and Food Science
+from [Zhejiang University](https://www.zju.edu.cn) in 2024.
+
+My Current research focuses on **Speech Language Models (SLMs)**,
 with a current emphasis on reinforcement learning for
 expressive speech generation.
-
-I received my B.Eng. in Biosystems Engineering and Food Science
-from [Zhejiang University](https://www.zju.edu.cn) in 2024.
 
 ## Research Interests
 
