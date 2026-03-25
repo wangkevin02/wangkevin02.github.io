@@ -3,36 +3,36 @@ layout: about
 title: about
 permalink: /
 subtitle: >
-  Ph.D. Student, Computer Science<br>
-  <a href="https://www.cuhk.edu.cn">The Chinese University of Hong Kong, Shenzhen</a><br>
-  Advisor: Prof. Haizhou Li
-
+  Ph.D. Student · Computer Science · 
+  <a href="https://www.cuhk.edu.cn">CUHK-Shenzhen</a> · 
+  Advised by <a href="https://colips.org/~eleliha/">Prof. Haizhou Li</a>
 
 profile:
-  align: right           # 头像位置：right 或 left
-  image: kuangwang.jpg    # 头像文件名，放在 assets/img/ 下
-  image_circular: false  # true=圆形头像，false=方形
-  more_info: >           # 头像下方的小字信息
-    <p>kuangwang@link.cuhk.edu.cn</p>
-    <p>CUHK-Shenzhen, China</p>
+  align: right
+  image: kuangwang.jpg
+  image_circular: false
+  more_info: >
+    <p>📧 kuangwang@link.cuhk.edu.cn</p>
+    <p>📍 Shenzhen, China</p>
+    <p>🎓 CUHK-Shenzhen</p>
 
-news: true               # 是否显示 News 模块
-selected_papers: true    # 是否显示精选论文模块
-social: true             # 是否显示社交链接
+news: true
+selected_papers: true
+social: true
 ---
 
-I am a Ph.D. student in Computer Science at
-[The Chinese University of Hong Kong, Shenzhen (CUHK-SZ)](https://www.cuhk.edu.cn),
+I am a Ph.D. student in Computer Science at CUHK-Shenzhen,
 advised by [Prof. Haizhou Li](https://colips.org/~eleliha/).
+My research focuses on **Speech Language Models (SLMs)**,
+with a current emphasis on reinforcement learning for
+expressive speech generation.
 
-I received my B.Eng. in Biosystems Engineering and Food Science from
-[Zhejiang University](https://www.zju.edu.cn) in 2024.
-
-Currently, I focus on reinforcement learning for expressive speech generation in Speech Language Models (SLMs).
+I received my B.Eng. in Biosystems Engineering and Food Science
+from [Zhejiang University](https://www.zju.edu.cn) in 2024.
 
 ## Research Interests
 
-- **Speech Language Models (SLM)**
-- **Personalized Large Language Models**
-- **User Simulation**
-- **Conversational AI**
+- 🗣️ **Speech Language Models (SLM)**
+- 🧠 **Personalized Large Language Models**
+- 🤖 **User Simulation**
+- 💬 **Conversational AI**
