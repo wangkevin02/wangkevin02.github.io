@@ -37,3 +37,30 @@
 @use "font-awesome/brands";
 @use "font-awesome/solid";
 @use "font-awesome/regular";
+
+// Fix bibliography number spacing
+ol.bibliography {
+  li {
+    // 移除序号后的长条
+    &::marker {
+      content: none;
+    }
+    
+    // 或者直接调整间距
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
+// 针对 al-folio 的 bib 列表样式修复
+div.bibliography {
+  ol {
+    li {
+      padding-left: 1em !important;
+      
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
