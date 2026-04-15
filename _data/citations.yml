@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-04-08'
+  last_updated: '2026-04-15'
 papers:
   xsMklSkAAAAJ:9yKSN-GCB0IC:
     citations: 1
@@ -10,7 +10,7 @@ papers:
     title: 'CATCH: A Controllable Theme Detection Framework with Contextualized Clustering and Hierarchical Generation'
     year: '2026'
   xsMklSkAAAAJ:u-x6o8ySG0sC:
-    citations: 12
+    citations: 13
     title: 'Know you first and be you better: Modeling human-like user simulators via implicit profiles'
     year: '2025'
   xsMklSkAAAAJ:u5HHmVD_uO8C:
