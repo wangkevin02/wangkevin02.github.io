@@ -1,6 +1,10 @@
 metadata:
-  last_updated: '2026-04-15'
+  last_updated: '2026-04-17'
 papers:
+  xsMklSkAAAAJ:2osOgNQ5qMEC:
+    citations: 0
+    title: 'Bridging What the Model Thinks and How It Speaks: Self-Aware Speech Language Models for Expressive Speech Generation'
+    year: '2026'
   xsMklSkAAAAJ:9yKSN-GCB0IC:
     citations: 1
     title: Discourse-Aware Dual-Track Streaming Response for Low-Latency Spoken Dialogue Systems
@@ -10,7 +14,7 @@ papers:
     title: 'CATCH: A Controllable Theme Detection Framework with Contextualized Clustering and Hierarchical Generation'
     year: '2026'
   xsMklSkAAAAJ:u-x6o8ySG0sC:
-    citations: 13
+    citations: 14
     title: 'Know you first and be you better: Modeling human-like user simulators via implicit profiles'
     year: '2025'
   xsMklSkAAAAJ:u5HHmVD_uO8C:
