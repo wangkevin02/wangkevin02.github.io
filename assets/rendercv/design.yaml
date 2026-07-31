@@ -1,7 +1,18 @@
 # for more options, see https://docs.rendercv.com/user_guide/yaml_input_structure/design/
 design:
   theme: classic
+  colors:
+    body: "#20242A"
+    name: "#183B56"
+    headline: "#35566F"
+    connections: "#35566F"
+    section_titles: "#183B56"
+    links: "#1F5B83"
+    footer: "#6F7780"
+    top_note: "#6F7780"
   page:
     size: a4
     show_footer: false
     show_top_note: false
+  sections:
+    show_time_spans_in: []
