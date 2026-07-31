@@ -5,7 +5,7 @@
 @use "variables" as v;
 
 .publications {
-  margin-top: 2rem;
+  margin-top: 1.4rem;
 
   h1 {
     color: var(--global-theme-color);
@@ -37,7 +37,9 @@
     margin-top: 0;
 
     li {
-      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--global-divider-color);
+      margin-bottom: 0;
+      padding: 1.4rem 0;
 
       .preview {
         display: inline-block;
@@ -68,7 +70,10 @@
       }
 
       .title {
-        font-weight: bolder;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.08rem;
+        font-weight: 600;
+        line-height: 1.35;
       }
 
       .author {
@@ -102,8 +107,10 @@
         a.btn {
           color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
+          border-radius: 999px;
+          font-size: 0.72rem;
+          padding-left: 0.7rem;
+          padding-right: 0.7rem;
           padding-top: 0.25rem;
           padding-bottom: 0.25rem;
           margin-left: 0;
@@ -180,6 +187,11 @@
       border-color: var(--global-highlight-color);
     }
   }
+}
+
+.publication-intro {
+  color: var(--global-text-color-light);
+  max-width: 44rem;
 }
 
 .citation,

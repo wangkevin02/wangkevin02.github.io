@@ -3,13 +3,12 @@
 # for more information, please refer to the documentation of jekyll-socials plugin:
 # https://github.com/george-gca/jekyll-socials
 
-cv_pdf: /assets/pdf/kuang_wang_cv.pdf       # CV PDF 路径
-email: kuangwang@link.cuhk.edu.cn           # 邮箱
-github_username: wangkevin02               # GitHub（内置支持）
-scholar_userid: xsMklSkAAAAJ               # Google Scholar（内置支持）
-rss_icon: true                             # RSS 图标
+cv_pdf: /assets/rendercv/rendercv_output/Kuang_Wang_CV.pdf
+email: kuangwang@link.cuhk.edu.cn
+github_username: wangkevin02
+scholar_userid: xsMklSkAAAAJ
 
-# 自定义：Hugging Face（插件不内置，用 custom_social）
+# Hugging Face is not built into jekyll-socials.
 custom_social:
   logo: https://huggingface.co/front/assets/huggingface_logo.svg
   title: Hugging Face

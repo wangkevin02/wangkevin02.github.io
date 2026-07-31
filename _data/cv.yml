@@ -1,189 +1,151 @@
+# This is the single source of truth for the web CV and generated PDF.
+# After editing, run:
+#   rendercv render _data/cv.yml --settings assets/rendercv/settings.yaml
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
-  image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  name: Kuang Wang
+  headline: Ph.D. Student in Computer Science
+  email: kuangwang@link.cuhk.edu.cn
+  location: Shenzhen, China
+  website: https://wangkevin02.github.io
+  photo:
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
-    - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+      username: wangkevin02
+  custom_connections:
+    - fontawesome_icon: graduation-cap
+      placeholder: Google Scholar
+      url: https://scholar.google.com/citations?user=xsMklSkAAAAJ
 
   sections:
+    Research:
+      - >
+        Ph.D. student at The Chinese University of Hong Kong, Shenzhen, advised
+        by Prof. Haizhou Li. My research focuses on speech language models,
+        expressive speech generation, personalized language models, user
+        simulation, and conversational AI.
+
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+      - institution: The Chinese University of Hong Kong, Shenzhen
+        location: Shenzhen, China
+        url: https://www.cuhk.edu.cn
+        area: "Computer Science · Advisor: Prof. Haizhou Li"
+        degree: Ph.D.
+        start_date: "2024-09"
+        end_date: present
+
+      - institution: Zhejiang University
+        location: Hangzhou, China
+        url: https://www.zju.edu.cn
+        area: Biosystems Engineering
+        degree: B.Eng.
+        start_date: "2020-09"
+        end_date: "2024-06"
         highlights:
-          - Description 1.
-          - Description 2.
-
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
-        highlights:
-          - Description 1.
-          - Description 2.
-
-    Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
-        highlights:
-          - Relativity
-          - Description 2.
-
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
-        highlights:
-          - Description 1.
-          - Description 2.
-
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
-        highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
-
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
-
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+          - "GPA: 3.96/4.00 (89.98/100); rank: 4/64."
+          - "Outstanding Graduate of Zhejiang University, 2024."
+          - "First-Class Scholarship (top 5%), 2021."
 
     Publications:
-      - title: Zur Elektrodynamik bewegter Körper
+      - title: "Bridging What the Model Thinks and How It Speaks: Expressive Speech Generation via Self-Aware Intent-Realization Alignment"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+          - "**Kuang Wang**"
+          - Lai Wei
+          - Ping Lin
+          - Qibing Bai
+          - Wenkai Fang
+          - Li Zhou
+          - Feng Jiang
+          - Zhongjie Jiang
+          - Jun Huang
+          - Yannan Wang
+          - Haizhou Li
+        journal: arXiv preprint arXiv:2604.11424
+        date: "2026-04"
+        url: https://arxiv.org/abs/2604.11424
+        summary: "[Project](https://wangkevin02.github.io/SASLM/) · [Code](https://github.com/wangkevin02/SASLM)"
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
+      - title: "Discourse-Aware Dual-Track Streaming Response for Low-Latency Spoken Dialogue Systems"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
+          - Siyuan Liu
+          - Jiahui Xu
+          - Feng Jiang
+          - "**Kuang Wang**"
+          - Zefeng Zhao
+          - Chu-Ren Huang
+          - Jinghang Gu
+          - Changqing Yin
+          - Haizhou Li
+        journal: arXiv preprint arXiv:2602.23266
+        date: "2026-02"
+        url: https://arxiv.org/abs/2602.23266
 
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
+      - title: "CATCH: A Controllable Theme Detection Framework with Contextualized Clustering and Hierarchical Generation"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+          - Rui Ke
+          - Jiahui Xu
+          - Shenghao Yang
+          - "**Kuang Wang**"
+          - Feng Jiang
+          - Haizhou Li
+        journal: Proceedings of the AAAI Conference on Artificial Intelligence
+        date: "2026"
+        url: https://ojs.aaai.org/index.php/AAAI/article/view/40406
+
+      - title: "Know You First and Be You Better: Modeling Human-Like User Simulators via Implicit Profiles"
+        authors:
+          - "**Kuang Wang**"
+          - Xinting Li
+          - Shen Yang
+          - Shanshan Feng
+          - Haizhou Li
+        journal: Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL)
+        date: "2025"
+        url: https://aclanthology.org/2025.acl-long.1025/
+        summary: "[Code](https://github.com/wangkevin02/USP)"
+
+      - title: "Bridging Research and Readers: A Multi-Modal Automated Academic Papers Interpretation System"
+        authors:
+          - Feng Jiang
+          - "**Kuang Wang**"
+          - Haizhou Li
+        journal: arXiv preprint arXiv:2401.09150
+        date: "2024"
+        url: https://arxiv.org/abs/2401.09150
+        summary: "[Code](https://github.com/fjiangAI/MMAPIS) · [Video](https://www.youtube.com/watch?v=q2FZk-pciWY)"
+
+    Experience:
+      - company: Tencent Multimedia Lab
+        position: Research Intern · Speech Language Model Group
+        location: Shenzhen, China
+        start_date: "2025-07"
+        end_date: present
+        summary: >
+          Building post-training text data infrastructure for speech language
+          model pre-training.
+        highlights:
+          - "Designed a distributed multi-node data pipeline with Ray for 100+ TB of raw text."
+          - "Covered language filtering, normalization, quality scoring, domain classification, stratified sampling, and MinHash-LSH deduplication."
+          - "Prepared text corpora for continual pre-training of interleaved text–speech generation models."
+
+    Teaching:
+      - bullet: "**Teaching Assistant**, Reinforcement Learning, School of Data Science, CUHK-Shenzhen · Spring–Summer 2025."
+
+    Honors:
+      - bullet: "**Outstanding Graduate of Zhejiang University**, 2024."
+
+      - bullet: "**First-Class Scholarship (top 5%)**, Zhejiang University, 2021."
 
     Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - label: Research
+        details: Speech Language Models, Expressive Speech Generation, Personalized LLMs, User Simulation, Conversational AI
+
+      - label: Engineering
+        details: Python, PyTorch, Ray, Distributed Data Processing, Linux, Git, LaTeX, MaxCompute
 
     Languages:
-      - name: German
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-        highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - label: Mandarin Chinese
+        details: Native
+      - label: English
+        details: Fluent

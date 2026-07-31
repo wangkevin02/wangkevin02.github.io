@@ -8,7 +8,9 @@
   box-shadow: none;
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
-  opacity: 0.95;
+  opacity: 0.97;
+  padding-bottom: 0.6rem;
+  padding-top: 0.6rem;
 }
 
 .navbar .dropdown-menu,
@@ -57,10 +59,13 @@
 
   .navbar-brand {
     color: var(--global-text-color);
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: -0.02em;
   }
 
   .navbar-nav .nav-item .nav-link {
     color: var(--global-text-color);
+    font-size: 0.88rem;
 
     &:hover {
       color: var(--global-hover-color);

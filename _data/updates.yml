@@ -1,0 +1,30 @@
+# Add the newest item at the top.
+# Required fields: date, label, text.
+# Optional fields: url, link_text.
+- date: 2026-06-01
+  label: Paper
+  text: "Released the revised SASLM preprint on expressive speech generation through self-aware intent–realization alignment."
+  url: https://arxiv.org/abs/2604.11424
+  link_text: arXiv
+
+- date: 2026-02-26
+  label: Preprint
+  text: "Released DDTSR, a discourse-aware dual-track framework for low-latency spoken dialogue systems."
+  url: https://arxiv.org/abs/2602.23266
+  link_text: arXiv
+
+- date: 2025-12-25
+  label: Paper
+  text: "CATCH was accepted to AAAI 2026 and released as a preprint."
+  url: https://arxiv.org/abs/2512.21715
+  link_text: arXiv
+
+- date: 2025-07-01
+  label: Experience
+  text: "Joined Tencent Multimedia Lab as a research intern, working on large-scale post-training text data for speech language models."
+
+- date: 2025-05-15
+  label: Paper
+  text: "USP was accepted to ACL 2025."
+  url: https://aclanthology.org/2025.acl-long.1025/
+  link_text: ACL Anthology

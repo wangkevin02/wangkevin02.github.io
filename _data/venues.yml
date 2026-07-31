@@ -7,3 +7,15 @@
 
 "Vision":
   color: "#009f36"
+
+"ACL":
+  url: https://aclanthology.org/
+  color: "#1f5b83"
+
+"AAAI":
+  url: https://aaai.org/
+  color: "#7c3f58"
+
+"arXiv":
+  url: https://arxiv.org/
+  color: "#8b3a3a"
