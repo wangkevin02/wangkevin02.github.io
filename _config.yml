@@ -14,7 +14,7 @@ footer_text: >
   Research, code, and selected updates.
 keywords: speech language models, personalized language models, user simulation, conversational AI, Kuang Wang
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: 🗣️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: favicon.svg # compact speech-wave mark in /assets/img/
 
 url: https://wangkevin02.github.io
 baseurl: ""

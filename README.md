@@ -10,8 +10,9 @@ essentials: **Home**, **Publications**, and **CV**.
 | Biography and research focus    | `_pages/about.md`                              |
 | Updates / activities            | `_data/updates.yml`                            |
 | Publications                    | `_bibliography/papers.bib`                     |
-| Web CV and generated PDF        | `_data/cv.yml`                                 |
-| CV typography and colors        | `assets/rendercv/design.yaml`                  |
+| Homepage background data        | `_data/cv.yml`                                 |
+| English / Chinese CV source     | `../resume/en_resume.tex`, `zh_resume.tex`     |
+| Embedded CV PDFs                | `assets/pdf/Kuang_Wang_CV_{en,zh}.pdf`         |
 | Social links                    | `_data/socials.yml`                            |
 | Site metadata and feature flags | `_config.yml`                                  |
 | Homepage interaction            | `assets/js/updates.js`                         |
@@ -52,28 +53,28 @@ website     = {https://...}
 
 ### Update the CV
 
-Edit `_data/cv.yml`, then generate the PDF:
+The `/cv/` page embeds the original English or Chinese PDF instead of rebuilding
+the resume as HTML. The paired LaTeX sources live in
+[`phd_core/05_personal_brand_and_skills/resume`](https://github.com/wangkevin02/phd_core/tree/main/05_personal_brand_and_skills/resume).
+With both repositories checked out as siblings, build and copy both PDFs:
 
 ```bash
-python -m pip install -r requirements.txt
-rendercv render _data/cv.yml --settings assets/rendercv/settings.yaml
-```
-
-The expected PDF path is:
-
-```text
-assets/rendercv/rendercv_output/Kuang_Wang_CV.pdf
-```
-
-GitHub Actions also runs the RenderCV workflow when the CV data or design
-changes.
-
-The Chinese CV is maintained in `../resume/zh_resume.tex`. Compile it with:
-
-```bash
-tectonic ../resume/zh_resume.tex
+cd ../resume
+./build_resume.sh pdf all
+cd ../wangkevin02.github.io
+cp ../resume/en_resume.pdf assets/pdf/Kuang_Wang_CV_en.pdf
 cp ../resume/zh_resume.pdf assets/pdf/Kuang_Wang_CV_zh.pdf
 ```
+
+The embedded assets are:
+
+```text
+assets/pdf/Kuang_Wang_CV_en.pdf
+assets/pdf/Kuang_Wang_CV_zh.pdf
+```
+
+`_data/cv.yml` remains the structured source for the compact
+Experience / Education / Honors summary on the homepage.
 
 ## Local development
 
@@ -104,7 +105,7 @@ Then inspect:
 - dark mode;
 - Updates: previous / pause / next, keyboard focus, reduced-motion behavior;
 - `/publications/`;
-- `/cv/` and the PDF download.
+- `/cv/`, its English / Chinese switch, and the current-language PDF fallback.
 
 ## Design rules
 

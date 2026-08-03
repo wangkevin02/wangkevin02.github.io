@@ -180,6 +180,138 @@ ul.task-list input[type="checkbox"] {
   font-size: 0.84rem;
 }
 
+.home-highlights {
+  clear: both;
+  margin: 2.75rem 0 3.5rem;
+}
+
+.home-highlight-grid {
+  border-bottom: 1px solid var(--global-divider-color);
+  border-top: 1px solid var(--global-divider-color);
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.home-highlight-group {
+  padding: 1.25rem 1.35rem;
+
+  & + & {
+    border-left: 1px solid var(--global-divider-color);
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  h3 {
+    color: var(--global-theme-color);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+}
+
+.home-highlight-item {
+  & + & {
+    margin-top: 1rem;
+  }
+
+  p {
+    color: var(--global-text-color-light);
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin: 0.2rem 0 0;
+  }
+}
+
+.home-highlight-title {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: space-between;
+
+  strong {
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  span {
+    color: var(--global-text-color-light);
+    flex: 0 0 auto;
+    font-size: 0.72rem;
+    font-variant-numeric: tabular-nums;
+    padding-top: 0.12rem;
+    white-space: nowrap;
+  }
+}
+
+.home-highlight-honor {
+  strong {
+    color: var(--global-text-color);
+    font-weight: 600;
+  }
+}
+
+.cv-pdf-viewer {
+  margin-top: 1.5rem;
+}
+
+.cv-pdf-toolbar {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.cv-pdf-language {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+
+  .button {
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .button-primary {
+    background: var(--global-theme-color);
+  }
+}
+
+.cv-pdf-open {
+  white-space: nowrap;
+}
+
+.cv-pdf-status {
+  color: var(--global-text-color-light);
+  font-size: 0.82rem;
+  margin-bottom: 0.45rem;
+}
+
+.cv-pdf-object {
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.5rem;
+  display: block;
+  height: min(78vh, 68rem);
+  min-height: 42rem;
+  width: 100%;
+}
+
+.cv-pdf-fallback,
+.cv-pdf-noscript {
+  color: var(--global-text-color-light);
+  padding: 1rem;
+}
+
 .updates-section {
   margin: 2.75rem 0 3.5rem;
 }
@@ -187,7 +319,8 @@ ul.task-list input[type="checkbox"] {
 .updates-viewport {
   border-bottom: 1px solid var(--global-divider-color);
   border-top: 1px solid var(--global-divider-color);
-  max-height: 13.5rem;
+  // Three standard update rows remain visible before the viewport scrolls.
+  max-height: 20.25rem;
   overflow-y: auto;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
@@ -448,8 +581,31 @@ ul.task-list input[type="checkbox"] {
     gap: 0.45rem;
   }
 
+  .home-highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-highlight-group {
+    padding: 1.15rem 0;
+
+    & + & {
+      border-left: 0;
+      border-top: 1px solid var(--global-divider-color);
+    }
+  }
+
   .button {
     font-size: 0.82rem;
+  }
+
+  .cv-pdf-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cv-pdf-object {
+    height: 70vh;
+    min-height: 32rem;
   }
 
   .update-item {

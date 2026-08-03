@@ -46,7 +46,7 @@
   {% endif %}
 
   <!-- Entry bib key -->
-  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
+  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-10{% else %}col-sm-12{% endif %}">
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
     <!-- Author -->
@@ -148,28 +148,28 @@
       {% endif %}
     </div>
 
-    <!-- Journal/Book title and date -->
+    <!-- Venue and date -->
     {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
     {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
     {% if entry.type == 'article' %}
-      {% capture entrytype %}<em>{{ entry.journal }}</em>{% endcapture %}
+      {% capture entrytype %}{{ entry.journal }}{% endcapture %}
     {% elsif proceedings contains entry.type %}
-      {% capture entrytype %}<em>In {{ entry.booktitle }}</em>{% endcapture %}
+      {% capture entrytype %}{{ entry.booktitle }}{% endcapture %}
     {% elsif thesis contains entry.type %}
-      {% capture entrytype %}<em>{{ entry.school }}</em>{% endcapture %}
+      {% capture entrytype %}{{ entry.school }}{% endcapture %}
     {% else %}
       {% capture entrytype %}{% endcapture %}
     {% endif %}
     {% assign entrymonth = '' %}
     {% if entry.month %}
-      {% capture entrymonth %}{{ " " }}{{ entry.month | capitalize }}{% endcapture %}
+      {% capture entrymonth %}{{ entry.month | capitalize }}{% endcapture %}
     {% endif %}
     {% assign entryyear = '' %}
     {% if entry.year %}
-      {% capture entryyear %}{{ " " }}{{ entry.year }}{% endcapture %}
+      {% capture entryyear %}{{ entry.year }}{% endcapture %}
     {% endif %}
     {% if entry.location %}
-      {% capture entrytype %}{{ entrytype }}{{ ", " }}{{ entry.location }}{% endcapture %}
+      {% capture entrytype %}{{ entrytype }}, {{ entry.location }}{% endcapture %}
     {% endif -%}
     {% if entry.additional_info %}
       {% capture entrytype %}{{ entrytype }}{{ entry.additional_info | markdownify | remove: '<p>' | remove: '</p>' }}{% endcapture %}
@@ -179,13 +179,26 @@
       {% include hook/bib.liquid %}
     {% endif %}
     {% assign entrytype_text = entrytype | strip_html | strip %}
-    {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
-    <div class="periodical">
-      {{ periodical | strip }}
-    </div>
-    <div class="periodical">
-      {{ entry.note | strip }}
-    </div>
+    {% if entrytype_text != '' or entrymonth != '' or entryyear != '' %}
+      <div class="publication-meta">
+        {% if entrytype_text != '' %}
+          <span class="venue-name">{{ entrytype | strip }}</span>
+        {% endif %}
+        {% if entrymonth != '' or entryyear != '' %}
+          {% if entrytype_text != '' -%}
+            <span class="meta-separator" aria-hidden="true">·</span>
+          {%- endif %}
+          <span class="publication-date">
+            {{- entrymonth -}}
+            {%- if entrymonth != '' and entryyear != '' %} {% endif -%}
+            {{- entryyear -}}
+          </span>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if entry.note %}
+      <div class="publication-note">{{ entry.note | strip }}</div>
+    {% endif %}
 
     <!-- Links/Buttons -->
     <div class="links">

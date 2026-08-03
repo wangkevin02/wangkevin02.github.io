@@ -186,6 +186,9 @@
 {% if page.permalink == '/' %}
   <script defer src="{{ '/assets/js/updates.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 {% endif %}
+{% if page.cv_pdf_embed %}
+  <script defer src="{{ '/assets/js/cv-pdf.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
+{% endif %}
 
 <!-- Jupyter Open External Links New Tab -->
 <script defer src="{{ '/assets/js/jupyter_new_tab.js' | relative_url | bust_file_cache }}"></script>

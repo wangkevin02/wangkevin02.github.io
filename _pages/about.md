@@ -18,8 +18,7 @@ social: false
 
 <p class="eyebrow">Speech · Language · Human-centered AI</p>
 
-I am a Ph.D. student at The Chinese University of Hong Kong, Shenzhen. I study
-how speech and language models can better understand **what a person means**,
+I study how speech and language models can better understand **what a person means**,
 **how an utterance should sound**, and **who the system is interacting with**.
 
 My current work centers on expressive speech generation and Speech Language
@@ -41,5 +40,7 @@ Biosystems Engineering from Zhejiang University.
   <span>User Simulation</span>
   <span>Conversational AI</span>
 </div>
+
+{% include home_highlights.liquid %}
 
 {% include updates.liquid %}

@@ -1,0 +1,69 @@
+{% assign cv_sections = site.data.cv.cv.sections %}
+{% assign experience = cv_sections.Experience %}
+{% assign education = cv_sections.Education %}
+{% assign honors = cv_sections.Honors %}
+
+<section class="home-highlights" aria-labelledby="background-heading">
+  <div class="section-heading-row">
+    <div>
+      <p class="section-kicker">Background</p>
+      <h2 id="background-heading">Experience &amp; education</h2>
+    </div>
+    <a class="section-link" href="{{ '/cv/' | relative_url }}">Full CV <span aria-hidden="true">→</span></a>
+  </div>
+
+  <div class="home-highlight-grid">
+    {% if experience and experience.size > 0 %}
+      <section class="home-highlight-group" aria-labelledby="experience-heading">
+        <h3 id="experience-heading">Experience</h3>
+        {% for item in experience limit: 2 %}
+          {% assign start_date = item.start_date | append: '-01' | date: '%b %Y' %}
+          {% if item.end_date == 'present' %}
+            {% assign end_date = 'Present' %}
+          {% else %}
+            {% assign end_date = item.end_date | append: '-01' | date: '%b %Y' %}
+          {% endif %}
+          <div class="home-highlight-item">
+            <div class="home-highlight-title">
+              <strong>{{ item.company }}</strong>
+              <span>{{ start_date }}–{{ end_date }}</span>
+            </div>
+            <p>{{ item.position }}</p>
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+
+    {% if education and education.size > 0 %}
+      <section class="home-highlight-group" aria-labelledby="education-heading">
+        <h3 id="education-heading">Education</h3>
+        {% for item in education limit: 2 %}
+          {% assign start_date = item.start_date | append: '-01' | date: '%Y' %}
+          {% if item.end_date == 'present' %}
+            {% assign end_date = 'Present' %}
+          {% else %}
+            {% assign end_date = item.end_date | append: '-01' | date: '%Y' %}
+          {% endif %}
+          <div class="home-highlight-item">
+            <div class="home-highlight-title">
+              <strong>{{ item.institution }}</strong>
+              <span>{{ start_date }}–{{ end_date }}</span>
+            </div>
+            <p>{{ item.degree }} in {{ item.area }}</p>
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+
+    {% if honors and honors.size > 0 %}
+      <section class="home-highlight-group" aria-labelledby="honors-heading">
+        <h3 id="honors-heading">Honors</h3>
+        {% for item in honors limit: 2 %}
+          <div class="home-highlight-item home-highlight-honor">
+            {{ item.bullet | markdownify }}
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+  </div>
+</section>
