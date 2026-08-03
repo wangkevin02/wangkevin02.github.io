@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "Academic curriculum vitae. The web view and PDF are generated from the same YAML data.",
+          description: "Read the original English or Chinese PDF directly in the browser.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
