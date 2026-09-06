@@ -2,7 +2,7 @@
 # Required fields: date, label, text.
 # Optional fields: url, link_text.
 - date: 2026-06-01
-  label: Paper
+  label: Preprint
   text: "Released the revised SASLM preprint on expressive speech generation through self-aware intent–realization alignment."
   url: https://arxiv.org/abs/2604.11424
   link_text: arXiv
@@ -14,17 +14,21 @@
   link_text: arXiv
 
 - date: 2025-12-25
-  label: Paper
-  text: "CATCH was accepted to AAAI 2026 and released as a preprint."
-  url: https://arxiv.org/abs/2512.21715
-  link_text: arXiv
+  label: Publication
+  venue: AAAI
+  venue_year: 2026
+  text: "CATCH was accepted to AAAI 2026."
+  url: https://ojs.aaai.org/index.php/AAAI/article/view/40406
+  link_text: AAAI Proceedings
 
 - date: 2025-07-01
   label: Experience
   text: "Joined Tencent Multimedia Lab as a research intern, working on large-scale post-training text data for speech language models."
 
 - date: 2025-05-15
-  label: Paper
+  label: Publication
+  venue: ACL
+  venue_year: 2025
   text: "USP was accepted to ACL 2025."
   url: https://aclanthology.org/2025.acl-long.1025/
   link_text: ACL Anthology

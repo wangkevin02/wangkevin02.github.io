@@ -6,19 +6,24 @@
 
 :root {
   color-scheme: light;
-  --global-bg-color: #fbfaf7;
+  --global-bg-color: #fafaf9;
   --global-code-bg-color: #{v.$code-bg-color-light};
   --global-text-color: #20242a;
-  --global-text-color-light: #69727c;
-  --global-theme-color: #1f5b83;
-  --global-hover-color: #153e5a;
+  --global-text-color-light: #606973;
+  --global-theme-color: #943754;
+  --global-link-color: #245a81;
+  --global-link-hover-color: #173e5c;
+  --global-link-bg: #edf3f8;
+  --global-link-on-color: #ffffff;
+  --global-hover-color: #72263e;
+  --global-accent-bg: #f9eef2;
   --global-hover-text-color: #{v.$white-color};
-  --global-footer-bg-color: #f1efe9;
+  --global-footer-bg-color: #fafaf9;
   --global-footer-text-color: #69727c;
-  --global-footer-link-color: #1f5b83;
+  --global-footer-link-color: #943754;
   --global-distill-app-color: #{v.$grey-color};
   --global-divider-color: rgba(32, 36, 42, 0.14);
-  --global-card-bg-color: #fffefa;
+  --global-card-bg-color: #ffffff;
   --global-highlight-color: #8b3a3a;
   --global-back-to-top-bg-color: rgba(
     #{color.channel(v.$black-color, "red", v.$space: rgb)},
@@ -80,12 +85,17 @@ html[data-theme="dark"] {
   --global-code-bg-color: #{v.$code-bg-color-dark};
   --global-text-color: #e8e7e2;
   --global-text-color-light: #a9afb5;
-  --global-theme-color: #82b7d5;
-  --global-hover-color: #acd3e8;
-  --global-hover-text-color: #{v.$white-color};
+  --global-theme-color: #dca8b9;
+  --global-link-color: #8ab8df;
+  --global-link-hover-color: #b6d6f0;
+  --global-link-bg: #202f3d;
+  --global-link-on-color: #15191d;
+  --global-hover-color: #f1cbd7;
+  --global-accent-bg: #34232b;
+  --global-hover-text-color: #15191d;
   --global-footer-bg-color: #101316;
   --global-footer-text-color: #a9afb5;
-  --global-footer-link-color: #82b7d5;
+  --global-footer-link-color: #dca8b9;
   --global-distill-app-color: #{v.$grey-color-light};
   --global-divider-color: rgba(232, 231, 226, 0.16);
   --global-card-bg-color: #1c2227;

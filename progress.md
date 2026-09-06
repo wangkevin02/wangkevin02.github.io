@@ -1,0 +1,29 @@
+# 主页优化
+
+目标：参考 shanguanma 与 Laip11 的学术主页，使个人身份、研究方向、论文和经历更容易浏览。
+
+范围：在现有 Jekyll/al-folio 中调整首页模板、样式和动态展示，保留论文数据、公开地址与双语 CV。
+
+完成条件：生产构建成功；检查桌面和手机布局、深浅色、章节导航、论文入口及 CV 切换。
+
+当前状态：左栏精简完成，移除 Location 与研究标语，CV 与 Scholar 同为图标文字行；Education 不再重复导师，学位使用小标签，时间弱化。Experience 配腾讯标识并位于 News 上方；News 显示会议年份或 Preprint 月份；首页底部直接展示全部五篇论文，精选区展示两篇一作与指定的 MMAPIS。网站图标改为酒红底白色 KW 字母标识，替换声波。
+
+关键决策：保留 88% 页面宽度；左栏无独立滚动条。宽度至少 992px 且高度至少 820px 时保持可见，其余窗口自然整页滚动。头像缩至 140px，校名和学位突出，日期次要。Experience 采用圆形腾讯标识与右侧文字并排，机构突出、职位次之、日期弱化。全部论文按 2026、2025、2024 年份节点分组，年内按月份倒序。无新增运行依赖。
+
+年份样式：All publications 使用放大的酒红色年份、空心圆节点、渐隐横线与组内细竖线；手机缩小缩进，Selected publications 不受影响。
+
+文案精简：About me 使用用户指定两段与三项研究方向；实习摘要改为 “Text data preparation for continual pre-training of Speech Language Models.”；删除 CV 提示与 Publications 两段简介。移除 About me 的 80ch 宽度上限，正文使用完整右栏。
+
+最终视觉：纸白/炭黑背景、酒红强调；正文链接细下划线，资源按钮统一悬停和聚焦状态。右侧区块统一分隔线、留白和标题短色线，研究标签使用中性色。BibTeX 支持 Enter/空格展开，CV 打开链接补 PDF 图标。月级日期统一 YYYY.MM，Education 保留年份。
+
+资源精简：按钮按 PDF、Code、Demo/Video、BibTeX 排列，缺失资源不展示。论文标题链接官方页面或 arXiv 摘要；SASLM 使用独立 demo 字段。PDF 轻强调、其他资源中性，标题默认正文色；深浅色分别使用对应主题文字与背景色。
+
+链接与标识定稿：链接独立采用浅色 #245A81 / 深色 #8AB8DF 蓝色，悬停和 PDF 按钮使用对应主题蓝色背景与反色文字；酒红只承担内容强调。favicon 改为海军蓝底、几何白色 KW 字母，替换前一版酒红圆笔画标识。
+
+论文图片与入口：五篇论文均有原始框架图；新增 CATCH（AAAI 正式版 Figure 2）和 DDTSR（arXiv v1 Figure 2）。CATCH 使用正式页面/PDF 和官方代码，删除 arXiv 按钮；其他预印本保持原入口。DDTSR 论文中所列代码地址当前返回 404，暂不展示。
+
+环境：Ruby 4.0、Jekyll 4.4.1；依赖安装在忽略目录 vendor/bundle。没有 Docker；Browser 无可用连接，使用独立无头 Chrome 检查。
+
+验证依据：[检查结果](_audit/result.md)，含截图、检查范围和复现入口。
+
+下一步：可在 http://127.0.0.1:4000 预览。尚未提交 Git 或发布线上；如需上线，使用现有 GitHub Pages 发布流程。

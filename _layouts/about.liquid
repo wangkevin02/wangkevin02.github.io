@@ -1,87 +1,108 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        {{ site.first_name }}
-        {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
-
-  <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
-
-    <div class="clearfix">{{ content }}</div>
-
-    <!-- News -->
-    {% if page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
-
-    <!-- Latest posts -->
-    {% if page.latest_posts and page.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
-
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <div class="section-heading-row selected-publications-heading">
-        <div>
-          <p class="section-kicker">Recent work</p>
-          <h2>
-            <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected publications</a>
-          </h2>
+<div class="post academic-home">
+  <aside class="home-sidebar" aria-label="Profile and background">
+    <header class="academic-profile" id="profile">
+      {% if page.profile.image %}
+        {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+        <div class="academic-avatar">
+          {% include figure.liquid loading="eager" path=profile_image_path class="img-fluid" sizes="160px" alt=site.data.cv.cv.name cache_bust=true %}
         </div>
-        <a class="section-link" href="{{ '/publications/' | relative_url }}">View all <span aria-hidden="true">→</span></a>
+      {% endif %}
+      <div class="academic-identity">
+        <h1>
+          {{ site.data.cv.cv.name }}
+          <span class="native-name" lang="zh">王匡</span>
+        </h1>
+        <p class="academic-role">{{ site.data.cv.cv.headline }}</p>
+        <p class="academic-affiliation">{{ page.subtitle }}</p>
+        <ul class="profile-contact" aria-label="Contact and academic profiles">
+          <li>
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i
+            ><span
+              >Email: <a href="mailto:{{ site.data.socials.email | encode_email }}">{{ site.data.socials.email | escape }}</a></span
+            >
+          </li>
+          <li>
+            <i class="fa-brands fa-github" aria-hidden="true"></i
+            ><span
+              >GitHub: <a href="https://github.com/{{ site.data.socials.github_username }}">{{ site.data.socials.github_username }}</a></span
+            >
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">🤗</span
+            ><span
+              >Hugging Face: <a href="{{ site.data.socials.custom_social.url }}">{{ site.data.socials.github_username }}</a></span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i
+            ><span><a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}">Google Scholar</a></span>
+          </li>
+          <li>
+            <i class="fa-solid fa-address-card" aria-hidden="true"></i><span><a href="{{ '/cv/' | relative_url }}">CV</a></span>
+          </li>
+        </ul>
       </div>
-      {% include selected_papers.liquid %}
-    {% endif %}
+    </header>
+    {% include home_highlights.liquid %}
+  </aside>
+  <article class="home-main">
+    <section class="home-about" id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About me</h2>
+      {{ content }}
+      <h3 class="research-heading">Research interests</h3>
+      <ul class="research-topics" aria-label="Research interests">
+        {% for topic in page.research_interests %}
+          <li>{{ topic }}</li>
+        {% endfor %}
+      </ul>
+    </section>
 
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% social_links %}</div>
+    <section class="home-experience" id="experience" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Experience</h2>
+      {% for item in site.data.cv.cv.sections.Experience %}
+        <div class="experience-item">
+          {% if item.company == 'Tencent Multimedia Lab' -%}
+            <img
+              class="experience-logo"
+              src="{{ '/assets/img/institutions/tencent.png' | relative_url }}"
+              alt="Tencent"
+              width="56"
+              height="56"
+              loading="lazy"
+            >
+          {%- endif %}
+          <div class="experience-details">
+            <div class="home-highlight-title">
+              <strong>{{ item.company }}</strong>
+              <span>
+                {{- item.start_date | append: '-01' | date: '%Y.%m' }}–
+                {%- if item.end_date == 'present' %}Present{% else %}{{ item.end_date | append: '-01' | date: '%Y.%m' }}{% endif -%}
+              </span>
+            </div>
+            <p class="experience-role">{{ item.position }}</p>
+            <p>{{ item.summary }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
 
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
+    {% include updates.liquid %}
 
-    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
-      {% include newsletter.liquid center=true %}
+    {% if page.selected_papers %}
+      <section class="home-publications" id="publications" aria-labelledby="publications-heading">
+        <div class="section-heading-row">
+          <h2 id="publications-heading">Selected publications</h2>
+          <a class="section-link" href="#all-publications">All publications <span aria-hidden="true">→</span></a>
+        </div>
+        {% include selected_papers.liquid %}
+      </section>
     {% endif %}
+    <section class="home-publications" id="all-publications" aria-labelledby="all-publications-heading">
+      <h2 id="all-publications-heading">All publications</h2>
+      <div class="publications publication-timeline">{% bibliography --group_by year --group_order descending %}</div>
+    </section>
   </article>
 </div>

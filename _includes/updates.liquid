@@ -1,44 +1,23 @@
-{% assign updates = site.data.updates %}
+{% assign updates = site.data.updates | sort: 'date' | reverse %}
 {% if updates and updates.size > 0 %}
-  <section class="updates-section" aria-labelledby="updates-heading">
-    <div class="section-heading-row">
-      <div>
-        <p class="section-kicker">Activity stream</p>
-        <h2 id="updates-heading">Updates</h2>
-      </div>
-      {% if updates.size > 3 %}
-        <div class="update-controls" aria-label="Update controls">
-          <button type="button" data-update-action="previous" aria-label="Show previous update">←</button>
-          <button type="button" data-update-action="toggle" aria-pressed="false">Pause</button>
-          <button type="button" data-update-action="next" aria-label="Show next update">→</button>
-        </div>
-      {% endif %}
-    </div>
-
-    <div class="updates-viewport" data-updates-viewport tabindex="0" aria-label="Recent academic updates">
-      <ol class="updates-list">
-        {% for item in updates %}
-          <li class="update-item">
-            <time datetime="{{ item.date }}">{{ item.date | date: '%b %Y' }}</time>
-            <div class="update-copy">
-              <span class="update-label">{{ item.label }}</span>
-              <p>
-                {{ item.text }}
-                {% if item.url %}
-                  <a href="{{ item.url }}">
-                    {{- item.link_text | default: 'Details' }}
-                    <span aria-hidden="true">↗</span></a
-                  >
-                {% endif %}
-              </p>
-            </div>
-          </li>
-        {% endfor %}
-      </ol>
-    </div>
-
-    <noscript>
-      <p class="updates-note">All updates remain available above; automatic movement requires JavaScript.</p>
-    </noscript>
+  <section class="updates-section" id="news" aria-labelledby="updates-heading">
+    <h2 id="updates-heading">News</h2>
+    <ol class="updates-list">
+      {% for item in updates limit: 3 %}
+        {% include update_item.liquid item=item %}
+      {% endfor %}
+    </ol>
+    {% if updates.size > 3 %}
+      <details class="updates-archive">
+        <summary>
+          More updates <span>({{ updates.size | minus: 3 }})</span>
+        </summary>
+        <ol class="updates-list">
+          {% for item in updates offset: 3 %}
+            {% include update_item.liquid item=item %}
+          {% endfor %}
+        </ol>
+      </details>
+    {% endif %}
   </section>
 {% endif %}

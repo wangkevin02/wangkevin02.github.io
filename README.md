@@ -5,24 +5,24 @@ essentials: **Home**, **Publications**, and **CV**.
 
 ## Content map
 
-| What to edit                    | Source of truth                                |
-| ------------------------------- | ---------------------------------------------- |
-| Biography and research focus    | `_pages/about.md`                              |
-| Updates / activities            | `_data/updates.yml`                            |
-| Publications                    | `_bibliography/papers.bib`                     |
-| Homepage background data        | `_data/cv.yml`                                 |
-| English / Chinese CV source     | `../resume/en_resume.tex`, `zh_resume.tex`     |
-| Embedded CV PDFs                | `assets/pdf/Kuang_Wang_CV_{en,zh}.pdf`         |
-| Social links                    | `_data/socials.yml`                            |
-| Site metadata and feature flags | `_config.yml`                                  |
-| Homepage interaction            | `assets/js/updates.js`                         |
-| Homepage visual system          | `_sass/_components.scss`, `_sass/_themes.scss` |
+| What to edit                    | Source of truth                                     |
+| ------------------------------- | --------------------------------------------------- |
+| Biography and research focus    | `_pages/about.md`                                   |
+| Updates / activities            | `_data/updates.yml`                                 |
+| Publications                    | `_bibliography/papers.bib`                          |
+| Homepage background data        | `_data/cv.yml`                                      |
+| English / Chinese CV source     | `../resume/en_resume.tex`, `zh_resume.tex`          |
+| Embedded CV PDFs                | `assets/pdf/Kuang_Wang_CV_{en,zh}.pdf`              |
+| Social links                    | `_data/socials.yml`                                 |
+| Site metadata and feature flags | `_config.yml`                                       |
+| Homepage layout and news        | `_layouts/about.liquid`, `_includes/updates.liquid` |
+| Homepage visual system          | `_sass/_home.scss`, `_sass/_themes.scss`            |
 
 ## Common CRUD operations
 
 ### Add an update
 
-Add the newest entry to the **top** of `_data/updates.yml`:
+Add an entry to `_data/updates.yml`:
 
 ```yaml
 - date: 2026-08-01
@@ -32,8 +32,9 @@ Add the newest entry to the **top** of `_data/updates.yml`:
   link_text: Details
 ```
 
-`url` and `link_text` are optional. The homepage automatically picks up the new
-entry; do not edit HTML for routine updates.
+`url` and `link_text` are optional. The homepage sorts entries by date, shows the
+latest three, and keeps older entries under “More updates”. No JavaScript is
+required for this section.
 
 ### Add a publication
 
@@ -48,8 +49,18 @@ code        = {https://...},
 website     = {https://...}
 ```
 
-`selected = {true}` includes the paper on the homepage. Every paper appears on
-`/publications/`.
+`selected = {true}` marks homepage highlights: primarily Kuang Wang's first-author papers,
+plus explicitly selected collaborations such as MMAPIS.
+Every paper appears at the bottom of the homepage and on `/publications/`,
+grouped by year with milestone headings, newest first by `sort_date = {YYYY-MM}`.
+Use the formal publication month for conference papers and the first arXiv month
+for preprints; also set `month` for the displayed date. All authors are shown in
+their original order, with Kuang Wang highlighted.
+
+Resource buttons follow PDF → Code → Demo (when available) → Video (when available)
+→ BibTeX. Use `website` for the official paper landing page, linked from the title,
+and `demo` for a separate demonstration page. arXiv abstract links are available
+through preprint titles; DOI metadata remains in BibTeX without a duplicate button.
 
 ### Update the CV
 
@@ -91,21 +102,6 @@ Without Docker, if Ruby dependencies are already installed:
 ```bash
 bundle exec jekyll serve --livereload
 ```
-
-## Validation checklist
-
-```bash
-npx prettier . --write
-bundle exec jekyll build
-```
-
-Then inspect:
-
-- `/` at desktop and mobile widths;
-- dark mode;
-- Updates: previous / pause / next, keyboard focus, reduced-motion behavior;
-- `/publications/`;
-- `/cv/`, its English / Chinese switch, and the current-language PDF fallback.
 
 ## Design rules
 

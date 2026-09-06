@@ -14,6 +14,13 @@ $(document).ready(function () {
     $(this).parent().parent().find(".abstract.hidden.open").toggleClass("open");
     $(this).parent().parent().find(".award.hidden.open").toggleClass("open");
     $(this).parent().parent().find(".bibtex.hidden").toggleClass("open");
+    $(this).attr("aria-expanded", $(this).parent().parent().find(".bibtex.hidden").hasClass("open"));
+  });
+  $("a.bibtex").on("keydown", function (event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      $(this).trigger("click");
+    }
   });
   $("a").removeClass("waves-effect waves-light");
 

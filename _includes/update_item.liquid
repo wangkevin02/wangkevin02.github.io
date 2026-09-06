@@ -1,0 +1,23 @@
+<li class="update-item">
+  <span class="update-label update-label-{{ include.item.label | slugify }}">
+    <i
+      class="fa-solid {% case include.item.label %}{% when 'Publication' %}fa-building-columns{% when 'Preprint' %}fa-file-lines{% when 'Experience' %}fa-briefcase{% else %}fa-bullhorn{% endcase %}"
+      aria-hidden="true"
+    ></i>
+    {% if include.item.label == 'Publication' %}
+      {{ include.item.venue }}
+      {{ include.item.venue_year }}
+    {% else %}
+      {{ include.item.label }} · {{ include.item.date | date: '%Y.%m' }}
+    {% endif %}
+  </span>
+  <p>
+    {{ include.item.text }}
+    {% if include.item.url -%}
+      <a href="{{ include.item.url }}">
+        {{- include.item.link_text | default: 'Details' }}
+        <span aria-hidden="true">↗</span></a
+      >
+    {%- endif %}
+  </p>
+</li>

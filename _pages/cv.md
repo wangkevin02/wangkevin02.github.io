@@ -5,7 +5,6 @@ title: CV
 nav: true
 nav_order: 3
 cv_pdf_embed: true
-description: Read the original English or Chinese PDF directly in the browser.
 ---
 
 {% assign english_cv = '/assets/pdf/Kuang_Wang_CV_en.pdf' | relative_url %}
@@ -43,7 +42,7 @@ description: Read the original English or Chinese PDF directly in the browser.
       rel="noopener noreferrer"
       data-cv-open
     >
-      Open PDF <span aria-hidden="true">↗</span>
+      <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Open PDF <span aria-hidden="true">↗</span>
     </a>
 
   </div>

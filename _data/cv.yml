@@ -96,9 +96,10 @@ cv:
       - title: "Know You First and Be You Better: Modeling Human-Like User Simulators via Implicit Profiles"
         authors:
           - "**Kuang Wang**"
-          - Xinting Li
-          - Shen Yang
-          - Shanshan Feng
+          - Xianfei Li
+          - Shenghao Yang
+          - Li Zhou
+          - Feng Jiang
           - Haizhou Li
         journal: Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL)
         date: "2025"
@@ -122,8 +123,7 @@ cv:
         start_date: "2025-07"
         end_date: present
         summary: >
-          Building post-training text data infrastructure for speech language
-          model pre-training.
+          Text data preparation for continual pre-training of Speech Language Models.
         highlights:
           - "Designed a distributed multi-node data pipeline with Ray for 100+ TB of raw text."
           - "Covered language filtering, normalization, quality scoring, domain classification, stratified sampling, and MinHash-LSH deduplication."
