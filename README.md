@@ -111,3 +111,5 @@ bundle exec jekyll serve --livereload
 4. Keep the homepage scannable: identity, research direction, latest activity,
    and selected work.
 5. Verify paper metadata against the official venue or arXiv before publishing.
+
+See my [CV](https://wangkevin02.github.io/cv/) for details.
