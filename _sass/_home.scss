@@ -427,17 +427,16 @@
   img {
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 3;
     object-fit: contain;
     background: white;
     border: 1px solid var(--global-divider-color);
-    padding: 0.35rem;
+    padding: 2px;
   }
 }
 
 .academic-home .publications ol.bibliography > li > .row.paper-with-preview {
   display: grid;
-  grid-template-columns: 175px minmax(0, 1fr);
+  grid-template-columns: 210px minmax(0, 1fr);
   gap: 1.2rem;
   .abbr {
     width: 100%;
@@ -449,8 +448,8 @@
     grid-template-columns: minmax(0, 1fr);
     gap: 0.5rem;
   }
-  .paper-preview-link img {
-    max-height: 200px;
+  .paper-preview-link {
+    max-width: 360px;
   }
 }
 .home-section-nav {

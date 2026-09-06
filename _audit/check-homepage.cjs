@@ -171,6 +171,28 @@ async function checkThemeAppearance(page) {
       await img.scrollIntoViewIfNeeded();
       await img.evaluate((image) => image.decode());
       assert(await img.evaluate((image) => image.naturalWidth > 0));
+      if (await img.evaluate((image) => Boolean(image.closest(".paper-preview-link")))) {
+        assert(
+          await img.evaluate((image) => {
+            const style = getComputedStyle(image);
+            const rect = image.getBoundingClientRect();
+            const width =
+              rect.width -
+              parseFloat(style.paddingLeft) -
+              parseFloat(style.paddingRight) -
+              parseFloat(style.borderLeftWidth) -
+              parseFloat(style.borderRightWidth);
+            const height =
+              rect.height -
+              parseFloat(style.paddingTop) -
+              parseFloat(style.paddingBottom) -
+              parseFloat(style.borderTopWidth) -
+              parseFloat(style.borderBottomWidth);
+            return Math.abs(height - (width * image.naturalHeight) / image.naturalWidth) < 2;
+          }),
+          "Preview frame follows the image ratio without artificial letterboxing"
+        );
+      }
     }
     await page.evaluate(() => window.scrollTo(0, 0));
     assert.equal(await page.locator("#publications .publications ol.bibliography > li").count(), 3);
