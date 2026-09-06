@@ -11,14 +11,14 @@ ninja.data = [{
     },
   },{id: "nav-publications",
           title: "Publications",
-          description: "Selected and collaborative work on speech, language, and human-centered conversational AI.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "Read the original English or Chinese PDF directly in the browser.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
