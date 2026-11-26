@@ -11,7 +11,7 @@ essentials: **Home**, **Publications**, and **CV**.
 | Updates / activities            | `_data/updates.yml`                                 |
 | Publications                    | `_bibliography/papers.bib`                          |
 | Homepage background data        | `_data/cv.yml`                                      |
-| English / Chinese CV source     | `../resume/en_resume.tex`, `zh_resume.tex`          |
+| English / Chinese CV source     | `../../resume/workspace/latex/{main,zh_main}.tex`          |
 | Embedded CV PDFs                | `assets/pdf/Kuang_Wang_CV_{en,zh}.pdf`              |
 | Social links                    | `_data/socials.yml`                                 |
 | Site metadata and feature flags | `_config.yml`                                       |
@@ -67,14 +67,14 @@ through preprint titles; DOI metadata remains in BibTeX without a duplicate butt
 The `/cv/` page embeds the original English or Chinese PDF instead of rebuilding
 the resume as HTML. The paired LaTeX sources live in
 [`phd_core/05_personal_brand_and_skills/resume`](https://github.com/wangkevin02/phd_core/tree/main/05_personal_brand_and_skills/resume).
-With both repositories checked out as siblings, build and copy both PDFs:
+In this monorepo, the site lives under `homepage/` and the resume under
+`../../resume/`. After confirming the resume version, run from this site directory
+to build and copy both PDFs:
 
 ```bash
-cd ../resume
-./build_resume.sh pdf all
-cd ../wangkevin02.github.io
-cp ../resume/en_resume.pdf assets/pdf/Kuang_Wang_CV_en.pdf
-cp ../resume/zh_resume.pdf assets/pdf/Kuang_Wang_CV_zh.pdf
+(cd ../../resume && bash workspace/scripts/build_resume.sh pdf all)
+cp ../../resume/workspace/pdf/en_resume.pdf assets/pdf/Kuang_Wang_CV_en.pdf
+cp ../../resume/workspace/pdf/zh_resume.pdf assets/pdf/Kuang_Wang_CV_zh.pdf
 ```
 
 The embedded assets are:

@@ -117,17 +117,29 @@ cv:
         summary: "[Code](https://github.com/fjiangAI/MMAPIS) · [Video](https://www.youtube.com/watch?v=q2FZk-pciWY)"
 
     Experience:
-      - company: Tencent Multimedia Lab
-        position: Research Intern · Speech Language Model Group
+      - company: Shenzhen Loop Area Institute (SLAI)
+        position: Research Intern · Streaming Visual Full-Duplex Data Construction
+        location: Shenzhen, China
+        start_date: "2026-05"
+        end_date: present
+        summary: >
+          Led streaming visual full-duplex multimodal dialogue data construction (~585K bilingual dialogues).
+        highlights:
+          - "Built hierarchical Atom/Event/Clip video captioning with causal release, improving processing efficiency by ~30%."
+          - "Led persona-driven dual-agent dialogue generation with in-loop TTS and word alignment, aligning text, speech, and vision on a shared timeline."
+          - "Combined automated and human visual fact checking with speech regeneration, reducing visual errors from 18% to 3%."
+
+      - company: Tencent · CSIG · Yuanbao Product Dept.
+        position: Research Intern · Multimodal Technology Center, Intelligent Data & Foundation Models Group
         location: Shenzhen, China
         start_date: "2025-07"
         end_date: present
         summary: >
-          Text data preparation for continual pre-training of Speech Language Models.
+          Text data infrastructure for continual pre-training of Speech Language Models.
         highlights:
           - "Designed a distributed multi-node data pipeline with Ray for 100+ TB of raw text."
           - "Covered language filtering, normalization, quality scoring, domain classification, stratified sampling, and MinHash-LSH deduplication."
-          - "Prepared text corpora for continual pre-training of interleaved text–speech generation models."
+          - "Prepared text corpora for continual pre-training of interleaved text–speech generation SLMs supporting Tencent Meeting's voice assistant."
 
     Teaching:
       - bullet: "**Teaching Assistant**, Reinforcement Learning, School of Data Science, CUHK-Shenzhen · Spring–Summer 2025."

@@ -1,5 +1,7 @@
 _site
+_audit
 .bundle
+.DS_Store
 .DS_store
 .idea
 .jekyll-cache
@@ -9,7 +11,6 @@ _site
 .tweet-cache
 .venv
 assets/libs/
-assets/rendercv/rendercv_output/*.typ
 Gemfile.lock
 node_modules/
 vendor

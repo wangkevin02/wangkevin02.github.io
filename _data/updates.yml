@@ -7,6 +7,10 @@
   url: https://arxiv.org/abs/2604.11424
   link_text: arXiv
 
+- date: 2026-05-01
+  label: Experience
+  text: "Joined Shenzhen Loop Area Institute (SLAI) as a research intern, leading streaming visual full-duplex dialogue data construction."
+
 - date: 2026-02-26
   label: Preprint
   text: "Released DDTSR, a discourse-aware dual-track framework for low-latency spoken dialogue systems."
@@ -23,7 +27,7 @@
 
 - date: 2025-07-01
   label: Experience
-  text: "Joined Tencent Multimedia Lab as a research intern, working on large-scale post-training text data for speech language models."
+  text: "Joined Tencent CSIG (Yuanbao Product Dept.) as a research intern, working on large-scale text data infrastructure for Speech Language Models."
 
 - date: 2025-05-15
   label: Publication
