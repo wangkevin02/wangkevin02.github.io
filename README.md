@@ -11,7 +11,7 @@ essentials: **Home**, **Publications**, and **CV**.
 | Updates / activities            | `_data/updates.yml`                                 |
 | Publications                    | `_bibliography/papers.bib`                          |
 | Homepage background data        | `_data/cv.yml`                                      |
-| English / Chinese CV source     | `../../resume/workspace/latex/{main,zh_main}.tex`          |
+| English / Chinese CV source     | `../../resume/workspace/latex/{main,zh_main}.tex`   |
 | Embedded CV PDFs                | `assets/pdf/Kuang_Wang_CV_{en,zh}.pdf`              |
 | Social links                    | `_data/socials.yml`                                 |
 | Site metadata and feature flags | `_config.yml`                                       |
